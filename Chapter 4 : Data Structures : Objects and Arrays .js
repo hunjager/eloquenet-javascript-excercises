@@ -7,7 +7,25 @@ step is given, the elements go up by increments of one, corresponding to the
 old behavior.Make sure it also works with negative step values*/
 
 
-function range(start, end, count= start < end?1:-1) {
+function range(start,end){
+    let array= []
+    for(var i =start; i <= end; i++){
+        array.push(i)
+    }
+    return array;
+}
+console.log(range(1,10));
+
+  function sumofrange(array){
+    let sum = 0;
+    for(let value of array){
+        sum+=value;
+    }
+    return sum;
+}
+
+//modified function of the range
+function range2(start, end, count= start < end?1:-1) {
     let myArray = [];
     if (count > 0) {
       for (let i = start; i <= end; i += count){
@@ -21,15 +39,6 @@ function range(start, end, count= start < end?1:-1) {
     }
     return myArray;
   }
-  console.log(range(1,55,1));
-  console.log(range(10,2,-4));
-
-  function sumofrange(myArray){
-    let sum = 0;
-    for(let value of myArray){
-        sum+=value;
-    }
-    return sum
-  
-}
+  console.log(range2(1,55,1));
+  console.log(range2(10,2,-4));
 console.log(sumofrange(range(1,55)));
